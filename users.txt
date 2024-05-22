@@ -1,0 +1,10 @@
+user@uni.edu
+usuario@gmail.com
+profesor@uni.edu
+profe@uni.edu
+profesores@uni.edu
+alumno@uni.edu
+alumno01@uni.edu
+alumno02@uni.edu
+usuario@a.com
+usuario@b.com

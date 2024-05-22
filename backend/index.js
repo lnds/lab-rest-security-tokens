@@ -96,14 +96,14 @@ app.post("/login", async (req, res) => {
         const user = await pool.query("SELECT * FROM users WHERE email = $1", [email])
 
         if (user.rows.length === 0) {
-            return res.status(401).json("Password incorrecta o email no existe")
+            return res.status(404).json("usuario no existe")
         }
 
         // 3. verificar si la clave es la misma que está almacenada en la base de datos
         const validPassword = await compare(password, user.rows[0].password)
         console.log("plain", password, user.rows[0].password)
         if (!validPassword) {
-            return res.status(401).json("Password incorrecta o email no existe")
+            return res.status(401).json("Password incorrecta")
         }
 
         // 4. entregar un token jwt 
