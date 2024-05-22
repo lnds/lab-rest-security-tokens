@@ -59,7 +59,7 @@ services:
       - FLYWAY_PASSWORD=${POSTGRES_PASSWORD}
       - FLYWAY_URL=jdbc:postgresql://postgres:5432/${POSTGRES_DB}
       - FLYWAY_GROUP=true
-    command: -locations=filesystem:/flyway/sql -connectRetries=60 migrate
+    command: -locations=filesystem:/flyway/sql -connectRetries=120 migrate
     volumes:
       - ./sql_migrations:/flyway/sql
     depends_on:
